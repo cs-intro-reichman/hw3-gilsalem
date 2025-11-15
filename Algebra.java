@@ -24,44 +24,139 @@ public class Algebra {
 	}  
 
 	// Returns x1 + x2
-	public static int plus(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+	public static int plus(int x1, int x2)
+	 {
+		if(x1==x2)
+		{
+			x1=x1-1;
+		}
+		if(x1>x2)
+		{
+			for(int i=x2;i>=x1;i++)
+			{
+				x1++;
+			}
+			return x1;
+		}
+		else
+		{
+			for(int i=x1;i<=x2;i++)
+			{
+				x2++;
+			}
+			return x2++;
+		}
 	}
+	
 
 	// Returns x1 - x2
 	public static int minus(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+		if(x1>x2)
+		{
+			for(int i=x2;i<x1;i++)
+			{
+				x1--;
+			}
+			return x1;
+		}
+		if (x1<x2) 
+		{
+			for(int i=x1;i<x2;i++)
+			{
+				x2--;
+			}
+			return x2;
+			
+		}
+		else
+		{
+			return 0;
+		}
 	}
-
+		
 	// Returns x1 * x2
-	public static int times(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+	public static int times(int x1, int x2) 
+	{
+		if(x2!=0 || x1!=0)
+		{
+			int count=x1;
+			int result=0;
+			for(int i=0;i<count;i++)
+			{
+				result=plus(x2,x2);
+			}
+			return result;
+		}
+		else
+			return 0;
 	}
 
 	// Returns x^n (for n >= 0)
 	public static int pow(int x, int n) {
 		// Replace the following statement with your code
-		return 0;
+		int result=x;
+
+			if (n!=0)
+	  {
+			for(int i=1;i<n;i++)
+
+			{
+					result=times(x,x);
+			}
+		return result;
+			
+	    }
+			return 0;
+	
 	}
+
 
 	// Returns the integer part of x1 / x2 
 	public static int div(int x1, int x2) {
-		// Replace the following statement with your code
+
+		if(x2!=0)
+		{
+			int count=0;
+			while(x1>=x2)
+			{
+				x1=minus(x1,x2);
+				count=plus(count,1);
+			}
+			return count;
+		}
+		else
+
 		return 0;
 	}
 
 	// Returns x1 % x2
 	public static int mod(int x1, int x2) {
-		// Replace the following statement with your code
+		if(x2!=0)
+		{
+			while(x1>=x2)
+			{
+				x1=minus(x1,x2);
+			}
+			return x1;
+		}
 		return 0;
 	}	
 
 	// Returns the integer part of sqrt(x) 
 	public static int sqrt(int x) {
-		// Replace the following statement with your code
+		
+		while ((x!=0)) {
+			
+		for(int i=1;i<=x;i++)
+			{
+			if(pow(i,2)==x)
+			{
+				return i;
+			}
+			}
+		}
+		
+
 		return 0;
 	}	  	  
 }
