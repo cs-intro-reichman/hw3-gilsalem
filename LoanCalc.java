@@ -28,7 +28,7 @@ public class LoanCalc {
     private static double endBalance(double loan, double rate, int n, double payment) { 
         double rest = loan;
         double r = rate / 100.0; // interest rate per period as decimal
-        for (int i = 0; i < n; i++) {
+        for (int i = 1; i < n; i++) {
             rest = rest * (1 + r) - payment;
         }
         return rest;
