@@ -26,26 +26,13 @@ public class Algebra {
 	// Returns x1 + x2
 	public static int plus(int x1, int x2)
 	 {
-		if(x1==x2)
-		{
-			x1=x1-1;
-		}
-		if(x1>x2)
-		{
-			for(int i=x2;i>=x1;i++)
+
+		for(int i=0;i<=x2;i++)
 			{
 				x1++;
 			}
-			return x1;
-		}
-		else
-		{
-			for(int i=x1;i<=x2;i++)
-			{
-				x2++;
-			}
-			return x2++;
-		}
+
+		return x1;
 	}
 	
 
@@ -53,7 +40,7 @@ public class Algebra {
 	public static int minus(int x1, int x2) {
 		if(x1>x2)
 		{
-			for(int i=x2;i<x1;i++)
+			for(int i=0;i<x2;i++)
 			{
 				x1--;
 			}
@@ -61,7 +48,7 @@ public class Algebra {
 		}
 		if (x1<x2) 
 		{
-			for(int i=x1;i<x2;i++)
+			for(int i=0;i<x1;i++)
 			{
 				x2--;
 			}
@@ -83,7 +70,7 @@ public class Algebra {
 			int result=0;
 			for(int i=0;i<count;i++)
 			{
-				result=plus(x2,x2);
+				result+=plus(x2,x2);
 			}
 			return result;
 		}
@@ -95,20 +82,14 @@ public class Algebra {
 	public static int pow(int x, int n) {
 		// Replace the following statement with your code
 		int result=x;
-
-			if (n!=0)
-	  {
-			for(int i=1;i<n;i++)
-
-			{
-					result=times(x,x);
+		if (n!=0){
+			for(int i=0;i<n;i++){
+				result+=times(x,x);
 			}
-		return result;
-			
+		return result;	
 	    }
-			return 0;
-	
-	}
+			return 1;
+		}
 
 
 	// Returns the integer part of x1 / x2 
@@ -119,8 +100,8 @@ public class Algebra {
 			int count=0;
 			while(x1>=x2)
 			{
-				x1=minus(x1,x2);
-				count=plus(count,1);
+				x1-=minus(x1,x2);
+				count++;
 			}
 			return count;
 		}
@@ -135,7 +116,7 @@ public class Algebra {
 		{
 			while(x1>=x2)
 			{
-				x1=minus(x1,x2);
+				x1-=minus(x1,x2);
 			}
 			return x1;
 		}
